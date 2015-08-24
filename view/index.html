@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" href="static/semantic/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/swal/sweetalert.css" />
+</head>
+<body>
+    <div id="init"></div>
+    <div class="ui modal">
+        <div class="header">
+            Dive in!
+        </div>
+        <div class="content">
+            <div class="ui labeled input">
+                <div class="ui label" style="padding-right: 26px; padding-left: 26px;">
+                    Name:
+                </div>
+                <input type="text" name="name" placeholder="Enter full name..">
+            </div>
+            <div class="ui labeled input">
+                <div class="ui label">
+                    Username:
+                </div>
+                <input type="text" name="username" placeholder="Enter username..">
+            </div>
+            <div class="description">
+                <div class="ui header">Wanna join the awesome chat application?</div>
+                <p>Okay it's simple! just try to fill the fields on the left hand.</p>
+                <p>And then just press the Dive button to dive into your page.</p>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui positive right labeled icon button" id="dive">
+                Dive
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+    <div id="container" class="ui grid">
+        <div id="friends-list" class="five wide column">
+            <div class="ui raised stacked segment" id="user-info">
+                <h2 class="ui icon center aligned header">
+                    <img src="" class="ui circular image" id="my-img">
+                    <div class="content">
+                        <div id="welcome">Welcome, Jane Doe!</div>
+                        <div class="sub header" id="atsign">@janedoe</div>
+                        <div id="logout">
+                            <span><i class="power icon"></i></span>
+                        </div>
+                    </div>
+                </h2>
+            </div>
+            <div class="ui vertical menu left" id="roster">
+                <div class="item">
+                    <div class="ui transparent icon input">
+                        <input type="text" id="add" placeholder="Add a friend...">
+                        <i class="user icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="messages-pane" class="eleven wide column" style="z-index: 1;">
+            <div id="message-header">
+                <h2 class="ui header">
+                    <i class="comments icon"></i>
+                    <div class="content">
+                        <div id="head">Conversation with @sadjad</div>
+                        <div class="sub header" id="status">Online</div>
+                    </div>
+                </h2>
+            </div>
+
+            <div id="messages">
+                <div class="ui minimal comments" id="messages_list">
+                    <div id="init-content" style="font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif; background-color: rgb(255, 255, 255); text-align: center;"></div>
+                </div>
+            </div>
+
+            <div id="message-form-container" class="initiate" style="z-index: 1;">
+                <form class="ui form">
+                    <div class="ui action input">
+                        <input type="text" placeholder="Your message here..." dir="auto" id="msg_input">
+                        <div class="ui green icon button">
+                            <i class="send icon" id="send_button"></i> &nbsp;Send
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="static/js/jquery-2.1.4.min.js"></script>
+    <script src="static/semantic/semantic.min.js"></script>
+    <script src="socket.io-client/socket.io.js"></script>
+    <script src="static/swal/sweetalert.min.js"></script>
+    <script src="static/js/chat-js.js"></script>
+</body>
+</html>
